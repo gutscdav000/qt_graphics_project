@@ -1,2 +1,2 @@
-# qt_graphics_project
+# qt_graphics_projects
 my first attempt at a cpp simmulation
