@@ -9,8 +9,10 @@ extern Game *game;
 
 Enemy::Enemy(QGraphicsItem *parent) : QObject(), QGraphicsPixmapItem(parent)
 {
+
+    qDebug() << boundingRect().width() << "\t" << boundingRect().height() << endl;
     //set random position
-    int random_number = rand() % 700;
+    int random_number = (int)(rand() % (700 - (int)(boundingRect().width())));
     setPos(random_number, 0);
 
     //draw the rect

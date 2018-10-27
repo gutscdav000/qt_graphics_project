@@ -9,7 +9,7 @@
 Player::Player(QGraphicsItem *parent) : QObject(), QGraphicsPixmapItem(parent)
 {
     //set graphic
-    setPixmap(QPixmap(":/sprites/putin_head.jpg"));
+    setPixmap(QPixmap(":/sprites/kupatrupa.png"));
 
 }
 
