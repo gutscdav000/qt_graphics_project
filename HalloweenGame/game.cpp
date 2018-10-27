@@ -4,6 +4,7 @@
 #include <QGraphicsTextItem>
 #include <QFont>
 #include <QBrush>
+//#include <QMediaPlayer>
 #include <QImage>
 #include "Enemy.h"
 #include "Score.h"
@@ -20,7 +21,6 @@ Game :: Game(QWidget *parent) {
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(800, 600);
-
 
     //create item to put into scene
     player = new Player();
@@ -46,5 +46,14 @@ Game :: Game(QWidget *parent) {
     QObject::connect(timer, SIGNAL(timeout()), player, SLOT(spawn()));
     timer->start(2000);
 
+
     show();
+}
+
+Game :: ~Game() {
+
+    delete scene;
+    delete score;
+    delete player;
+    delete health;
 }

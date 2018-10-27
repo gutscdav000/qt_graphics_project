@@ -7,4 +7,8 @@
         <file>Moaningsoul.png</file>
         <file>kupatrupa.png</file>
     </qresource>
+    <qresource prefix="/sounds">
+        <file>boom9.wav</file>
+        <file>Alexander-Ehlers-Twists.mp3</file>
+    </qresource>
 </RCC>

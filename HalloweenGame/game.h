@@ -7,10 +7,12 @@
 #include <QTimer>
 #include "Score.h"
 #include "Health.h"
+#include <QMediaPlayer>
 
 class Game : public QGraphicsView {
 public:
     Game(QWidget * parent = 0);
+    ~Game();
 
     QGraphicsScene *scene;
     Player *player;
