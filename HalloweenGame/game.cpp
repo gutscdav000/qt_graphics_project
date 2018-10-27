@@ -3,6 +3,8 @@
 #include <QTimer>
 #include <QGraphicsTextItem>
 #include <QFont>
+#include <QBrush>
+#include <QImage>
 #include "Enemy.h"
 #include "Score.h"
 
@@ -12,6 +14,7 @@ Game :: Game(QWidget *parent) {
     //instantiate scene
     QGraphicsScene *scene = new QGraphicsScene();
     scene->setSceneRect(0,0, 800, 600);
+    setBackgroundBrush(QBrush(QImage(":/sprites/spooky-background.jpg.jp2")));
 
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -21,12 +24,12 @@ Game :: Game(QWidget *parent) {
 
     //create item to put into scene
     player = new Player();
-    player->setRect(0, 0, 100, 100);
+
     scene->addItem(player);
     //make rect focusable
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();
-    player->setPos(width()/2 - (player->rect().width()/2), height() - player->rect().height());
+    player->setPos(width()/2 , height() - 100);
 
     // create the score
     score = new Score();

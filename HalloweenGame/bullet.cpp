@@ -9,10 +9,12 @@
 
 extern Game *game; // there is an external global object called game
 
-Bullet::Bullet()
+Bullet::Bullet(QGraphicsItem *parent) : QObject(), QGraphicsPixmapItem(parent)
 {
-    //drewe the rect
-    setRect(0, 0, 10, 50);
+    //draw graphic
+    setPixmap(QPixmap(":/sprites/Missile.png"));
+    //setTransformOriginPoint(); //rotation point
+    //setRotation(); // degrees
 
     //connect
     QTimer *timer = new QTimer();
@@ -43,11 +45,10 @@ void Bullet::move()
     setPos(x(), y() - 10);
 
     // destroy object
-    if(pos().y() + rect().height() < 0) {
+    // previous cond: if(pos().y() + rect().height() < 0)
+    if(pos().y() < 0) {
         scene()->removeItem(this);
         delete this;
         qDebug() << "bullet removed";
     }
 }
-
-

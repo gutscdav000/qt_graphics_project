@@ -1,11 +1,13 @@
 #ifndef MYRECT_H
 #define MYRECT_H
-#include <QGraphicsRectItem>
+#include <QGraphicsPixmapItem>
+#include <QGraphicsItem>
 #include <QObject>
 
-class Player : public QObject, public QGraphicsRectItem {
+class Player : public QObject, public QGraphicsPixmapItem {
     Q_OBJECT
 public:
+    Player(QGraphicsItem *parent = 0);
     void keyPressEvent(QKeyEvent *event);
 public slots:
     void spawn();

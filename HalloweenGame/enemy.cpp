@@ -7,14 +7,14 @@
 
 extern Game *game;
 
-Enemy::Enemy()
+Enemy::Enemy(QGraphicsItem *parent) : QObject(), QGraphicsPixmapItem(parent)
 {
     //set random position
     int random_number = rand() % 700;
     setPos(random_number, 0);
 
-    //drew the rect
-    setRect(0, 0, 100, 100);
+    //draw the rect
+    setPixmap(QPixmap(":/sprites/jackolantern.png"));
 
     //connect
     QTimer *timer = new QTimer();
@@ -29,7 +29,7 @@ void Enemy::move()
     setPos(x(), y() + 5);
 
     // destroy object
-    if(pos().y() + rect().height() > 600) {
+    if(pos().y() > 600) {
         game->health->decrease();
         scene()->removeItem(this);
         delete this;

@@ -6,6 +6,14 @@
 #include <QKeyEvent>
 #include <QGraphicsScene>
 
+Player::Player(QGraphicsItem *parent) : QObject(), QGraphicsPixmapItem(parent)
+{
+    //set graphic
+    setPixmap(QPixmap(":/sprites/putin_head.jpg"));
+
+}
+
+
 void Player::keyPressEvent(QKeyEvent *event)
 {
     if(event->key() == Qt::Key_Left) {

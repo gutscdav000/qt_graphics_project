@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/sprites">
+        <file>jackolantern.png</file>
+        <file>Missile.png</file>
+        <file>putin_head.jpg</file>
+        <file>spooky-background.jpg.jp2</file>
+    </qresource>
+</RCC>
